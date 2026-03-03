@@ -1,0 +1,145 @@
+services:
+  api:
+    build: .
+    container_name: restaurantes-api
+    ports:
+      - "${PORT}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - ELASTIC_URL=http://elasticsearch:9200    
+    depends_on:
+      db:
+        condition: service_started
+      redis:
+        condition: service_started
+      elasticsearch:
+        condition: service_healthy                
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+    networks:
+      - mongo-cluster
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5437:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - mongo-cluster
+      - olap-net
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      db:
+        condition: service_started
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - mongo-cluster
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - mongo-cluster
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - bootstrap.memory_lock=true
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9206:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - mongo-cluster
+    healthcheck:                                # Comprueba que ES este listo
+      test: ["CMD", "curl", "-f", "http://localhost:9200/_cluster/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  search-service:
+    build:
+      context: ./src/search          # Microservicio de busqueda
+      dockerfile: Dockerfile
+    container_name: search-service
+
+    environment:
+      - NODE_ENV=development
+      - ELASTIC_URL=http://elasticsearch:9200
+      - SEARCH_PORT=4000
+
+    volumes:
+      - ./src/search:/app/search    
+      - ./src/utils:/app/utils       
+      - /app/node_modules         
+
+    command: node search/index.js    
+    ports:
+      - "4000:4000"
+
+    depends_on:
+      elasticsearch:
+        condition: service_healthy   
+      redis:
+        condition: service_started
+
+    networks:
+      - mongo-cluster
+
+
+  nginx:
+    image: nginx:1.25
+    container_name: nginx-balancer
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      api:
+        condition: service_started
+      search-service:
+        condition: service_started
+    networks:
+      - mongo-cluster
+
+volumes:
+  db_data:
+  pgadmin_data:
+  esdata:
+
+networks:
+  mongo-cluster:
+    external: true
+  olap-net:
+    external: true
+    name: olapnet

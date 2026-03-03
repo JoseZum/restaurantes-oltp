@@ -1,0 +1,33 @@
+# -----------------------------------------------------------
+# ConfigMap: configuracion no sensible del sistema OLTP
+# Contiene variables de entorno compartidas entre los
+# microservicios de la API y el servicio de busqueda.
+# -----------------------------------------------------------
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: restaurantes-config
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: restaurantes-config
+    app.kubernetes.io/component: configuracion
+    app.kubernetes.io/part-of: restaurantes-oltp
+data:
+  # Motor de base de datos utilizado por el DAO
+  DB_ENGINE: "postgres"
+  # Nombre del servicio interno de PostgreSQL en el cluster
+  DB_HOST: "postgres-db"
+  # Puerto estandar de PostgreSQL
+  DB_PORT: "5432"
+  # Nombre de la base de datos transaccional
+  DB_NAME: "restaurantes"
+  # URL interna del servicio de Elasticsearch
+  ELASTIC_URL: "http://elasticsearch:9200"
+  # URL interna del servicio de Redis
+  REDIS_URL: "redis://redis:6379"
+  # Puerto en el que escucha la API principal
+  PORT: "3000"
+  # Puerto en el que escucha el microservicio de busqueda
+  SEARCH_PORT: "4000"
+  # Entorno de ejecucion
+  NODE_ENV: "production"

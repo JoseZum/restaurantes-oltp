@@ -1,0 +1,48 @@
+# -----------------------------------------------------------
+# Kustomization: Orquestacion de todos los manifiestos K8s
+# Utilizar con: kubectl apply -k k8s/
+#
+# Este archivo define el orden y agrupacion de todos los
+# recursos necesarios para desplegar el sistema OLTP completo.
+# -----------------------------------------------------------
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Namespace por defecto aplicado a todos los recursos
+namespace: restaurantes-oltp
+
+# Etiquetas comunes aplicadas a todos los recursos
+commonLabels:
+  app.kubernetes.io/part-of: restaurantes-oltp
+  app.kubernetes.io/managed-by: kustomize
+
+# Lista de recursos en orden logico de dependencias:
+# 1. Namespace (contenedor logico)
+# 2. Configuracion y secretos (requeridos por los servicios)
+# 3. Infraestructura de datos (PostgreSQL, Redis, Elasticsearch)
+# 4. Servicios de aplicacion (API, Busqueda)
+# 5. Autoescalado e ingreso de trafico
+resources:
+  # --- Namespace ---
+  - namespace.yaml
+  # --- Configuracion ---
+  - configmap.yaml
+  - secrets.yaml
+  # --- Base de datos PostgreSQL ---
+  - postgres-statefulset.yaml
+  - postgres-service.yaml
+  # --- Cache Redis ---
+  - redis-deployment.yaml
+  - redis-service.yaml
+  # --- Motor de busqueda Elasticsearch ---
+  - elasticsearch-statefulset.yaml
+  - elasticsearch-service.yaml
+  # --- API principal ---
+  - api-deployment.yaml
+  - api-service.yaml
+  - api-hpa.yaml
+  # --- Microservicio de busqueda ---
+  - search-deployment.yaml
+  - search-service.yaml
+  # --- Ingreso de trafico externo ---
+  - ingress.yaml

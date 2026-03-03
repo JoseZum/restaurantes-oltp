@@ -1,0 +1,119 @@
+# -----------------------------------------------------------
+# Deployment: API Principal de Restaurantes
+# Microservicio Node.js (Express) que maneja las operaciones
+# CRUD de restaurantes, menus, ordenes, reservaciones y
+# autenticacion de usuarios. Se despliega con 2 replicas
+# para alta disponibilidad.
+# -----------------------------------------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurantes-api
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: restaurantes-api
+    app.kubernetes.io/component: api
+    app.kubernetes.io/part-of: restaurantes-oltp
+    app.kubernetes.io/version: latest
+  annotations:
+    description: "API REST principal del sistema de gestion de restaurantes"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: restaurantes-api
+      app.kubernetes.io/component: api
+  # Estrategia de actualizacion gradual para cero tiempo de inactividad
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: restaurantes-api
+        app.kubernetes.io/component: api
+        app.kubernetes.io/part-of: restaurantes-oltp
+    spec:
+      # Contexto de seguridad: ejecutar como usuario no root
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+      # Tiempo de gracia para cierre ordenado de conexiones
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: restaurantes-api
+          # Imagen publicada por el pipeline CI/CD en GitHub Container Registry
+          # Reemplazar YOUR_USERNAME con el nombre de usuario real de GitHub
+          image: ghcr.io/YOUR_USERNAME/restaurantes-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+          # Variables de entorno desde ConfigMap (no sensibles)
+          envFrom:
+            - configMapRef:
+                name: restaurantes-config
+          # Variables de entorno desde Secret (sensibles)
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: restaurantes-secrets
+                  key: DB_USER
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: restaurantes-secrets
+                  key: DB_PASS
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: restaurantes-secrets
+                  key: JWT_SECRET
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: restaurantes-secrets
+                  key: MONGO_URI
+          # Limites y solicitudes de recursos
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          # Sonda de disponibilidad: el pod acepta trafico solo cuando esta listo
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+          # Sonda de vida: reinicia el pod si la API deja de responder
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 20
+            periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 3
+          # Sonda de inicio: tiempo extra para conexion inicial a dependencias
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 30
+      # Credenciales para descargar la imagen desde GHCR (si el repositorio es privado)
+      # imagePullSecrets:
+      #   - name: ghcr-credentials

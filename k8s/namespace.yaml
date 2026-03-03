@@ -1,0 +1,15 @@
+# -----------------------------------------------------------
+# Namespace: restaurantes-oltp
+# Aislamiento logico para todos los recursos del sistema OLTP
+# de la API de restaurantes.
+# -----------------------------------------------------------
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: restaurantes-oltp
+    app.kubernetes.io/part-of: restaurantes-oltp
+    app.kubernetes.io/managed-by: kustomize
+  annotations:
+    description: "Namespace dedicado al sistema transaccional (OLTP) de la API de restaurantes"

@@ -1,0 +1,25 @@
+# -----------------------------------------------------------
+# Service: PostgreSQL (ClusterIP)
+# Expone PostgreSQL internamente dentro del cluster.
+# Los demas servicios se conectan usando el nombre DNS
+# "postgres-db.restaurantes-oltp.svc.cluster.local"
+# -----------------------------------------------------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-db
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: postgres-db
+    app.kubernetes.io/component: base-de-datos
+    app.kubernetes.io/part-of: restaurantes-oltp
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: postgres-db
+    app.kubernetes.io/component: base-de-datos
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: 5432
+      protocol: TCP

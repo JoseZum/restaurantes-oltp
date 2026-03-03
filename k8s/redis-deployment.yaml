@@ -1,0 +1,73 @@
+# -----------------------------------------------------------
+# Deployment: Redis 7
+# Cache en memoria utilizado por la API para almacenar
+# sesiones, tokens y respuestas frecuentes.
+# -----------------------------------------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/component: cache
+    app.kubernetes.io/part-of: restaurantes-oltp
+    app.kubernetes.io/version: "7"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/component: cache
+  # Estrategia de actualizacion con recreacion para evitar conflictos de datos
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: redis
+        app.kubernetes.io/component: cache
+        app.kubernetes.io/part-of: restaurantes-oltp
+    spec:
+      containers:
+        - name: redis
+          image: redis:7
+          ports:
+            - containerPort: 6379
+              name: redis
+              protocol: TCP
+          # Comando con configuracion de memoria maxima
+          command:
+            - redis-server
+            - --maxmemory
+            - "256mb"
+            - --maxmemory-policy
+            - allkeys-lru
+          # Limites y solicitudes de recursos
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          # Sonda de disponibilidad: verifica que Redis responda a PING
+          readinessProbe:
+            exec:
+              command:
+                - redis-cli
+                - ping
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          # Sonda de vida: reinicia si Redis deja de responder
+          livenessProbe:
+            exec:
+              command:
+                - redis-cli
+                - ping
+            initialDelaySeconds: 15
+            periodSeconds: 15
+            timeoutSeconds: 3
+            failureThreshold: 5

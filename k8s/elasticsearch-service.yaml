@@ -1,0 +1,29 @@
+# -----------------------------------------------------------
+# Service: Elasticsearch (ClusterIP)
+# Expone Elasticsearch internamente dentro del cluster.
+# El microservicio de busqueda y la API principal se
+# conectan usando "elasticsearch.restaurantes-oltp.svc.cluster.local"
+# -----------------------------------------------------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/component: motor-busqueda
+    app.kubernetes.io/part-of: restaurantes-oltp
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/component: motor-busqueda
+  ports:
+    - name: http
+      port: 9200
+      targetPort: 9200
+      protocol: TCP
+    - name: transport
+      port: 9300
+      targetPort: 9300
+      protocol: TCP

@@ -1,0 +1,56 @@
+# -----------------------------------------------------------
+# HorizontalPodAutoscaler: API Principal
+# Escala automaticamente la cantidad de replicas de la API
+# entre 2 y 5 pods segun el uso de CPU. Requiere que el
+# Metrics Server este instalado en el cluster.
+#
+# Instalacion de Metrics Server (si no esta presente):
+#   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+# -----------------------------------------------------------
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: restaurantes-api-hpa
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: restaurantes-api-hpa
+    app.kubernetes.io/component: autoescalado
+    app.kubernetes.io/part-of: restaurantes-oltp
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: restaurantes-api
+  # Minimo de replicas (alta disponibilidad)
+  minReplicas: 2
+  # Maximo de replicas bajo carga elevada
+  maxReplicas: 5
+  metrics:
+    # Escalar cuando el uso promedio de CPU supere el 70%
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    # Escalar tambien cuando el uso de memoria supere el 80%
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
+  # Comportamiento de escalado para evitar oscilaciones
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+        - type: Pods
+          value: 1
+          periodSeconds: 60
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 60

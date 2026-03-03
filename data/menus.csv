@@ -1,0 +1,801 @@
+id,titulo,categoria,activo,restaurante_id
+1,Laboriosam,Entrada,True,33
+2,Voluptatibus,Postre,False,163
+3,Debitis,Plato Fuerte,True,91
+4,Quas,Plato Fuerte,True,126
+5,Inventore,Entrada,True,9
+6,Laboriosam,Plato Fuerte,True,149
+7,Rem,Plato Fuerte,False,102
+8,Explicabo,Entrada,False,192
+9,Possimus,Entrada,True,192
+10,Doloribus,Plato Fuerte,False,71
+11,Quis,Entrada,True,151
+12,Commodi,Entrada,False,55
+13,Quidem,Entrada,True,117
+14,Exercitationem,Plato Fuerte,False,21
+15,Laudantium,Postre,True,106
+16,Velit,Plato Fuerte,True,145
+17,Molestiae,Entrada,True,95
+18,Distinctio,Entrada,True,142
+19,Eveniet,Plato Fuerte,True,1
+20,Culpa,Postre,False,42
+21,Ipsum,Entrada,True,150
+22,Itaque,Entrada,True,56
+23,Cupiditate,Plato Fuerte,False,2
+24,Doloremque,Entrada,False,63
+25,Magnam,Entrada,False,115
+26,Laboriosam,Postre,False,113
+27,Fugit,Postre,True,192
+28,Quo,Plato Fuerte,True,195
+29,Delectus,Postre,False,167
+30,Et,Plato Fuerte,True,173
+31,Eum,Entrada,False,188
+32,Sit,Entrada,False,4
+33,Perferendis,Plato Fuerte,False,192
+34,Minima,Plato Fuerte,False,148
+35,Explicabo,Plato Fuerte,False,146
+36,Molestiae,Entrada,False,142
+37,Non,Postre,True,130
+38,Dolores,Entrada,True,30
+39,Rerum,Entrada,True,85
+40,Commodi,Plato Fuerte,True,72
+41,Dolore,Entrada,True,199
+42,Laudantium,Plato Fuerte,True,168
+43,Ab,Entrada,False,145
+44,Asperiores,Plato Fuerte,False,70
+45,Eligendi,Entrada,True,46
+46,Autem,Postre,False,2
+47,Id,Plato Fuerte,False,57
+48,Consequatur,Plato Fuerte,True,11
+49,Dolorem,Entrada,True,85
+50,Nulla,Postre,True,116
+51,Odio,Postre,False,14
+52,Vitae,Plato Fuerte,False,128
+53,Deleniti,Postre,False,70
+54,Nihil,Plato Fuerte,False,105
+55,Delectus,Entrada,False,97
+56,Iusto,Postre,False,35
+57,Quam,Entrada,False,29
+58,Earum,Postre,False,70
+59,In,Plato Fuerte,False,171
+60,Accusantium,Entrada,False,119
+61,Ab,Postre,False,27
+62,Quia,Entrada,False,105
+63,Vitae,Plato Fuerte,True,136
+64,Beatae,Plato Fuerte,True,96
+65,Doloribus,Plato Fuerte,False,39
+66,Voluptate,Entrada,True,104
+67,Beatae,Plato Fuerte,True,65
+68,Accusamus,Postre,False,160
+69,Quasi,Plato Fuerte,False,165
+70,Commodi,Postre,False,92
+71,Blanditiis,Plato Fuerte,False,191
+72,In,Entrada,True,197
+73,Itaque,Plato Fuerte,False,22
+74,Voluptatibus,Plato Fuerte,False,1
+75,Debitis,Postre,True,94
+76,Aspernatur,Postre,True,183
+77,Beatae,Postre,True,62
+78,Velit,Plato Fuerte,True,115
+79,Voluptatibus,Entrada,False,163
+80,Vitae,Postre,True,178
+81,Aut,Postre,True,176
+82,Fugit,Postre,False,17
+83,Vel,Entrada,False,47
+84,Voluptate,Plato Fuerte,False,45
+85,Maxime,Entrada,False,135
+86,Mollitia,Entrada,False,32
+87,Minima,Entrada,False,36
+88,Illum,Entrada,False,77
+89,Laborum,Entrada,False,119
+90,Atque,Plato Fuerte,False,28
+91,Ea,Postre,False,97
+92,Iure,Entrada,False,29
+93,Illo,Plato Fuerte,False,136
+94,Fuga,Postre,False,82
+95,Accusamus,Postre,True,81
+96,Quae,Plato Fuerte,False,144
+97,Magni,Plato Fuerte,True,27
+98,Labore,Entrada,False,47
+99,Reprehenderit,Entrada,False,47
+100,Officiis,Plato Fuerte,True,41
+101,Nostrum,Plato Fuerte,True,195
+102,Atque,Plato Fuerte,True,71
+103,Nesciunt,Postre,False,139
+104,Dolor,Entrada,False,24
+105,Quia,Postre,True,136
+106,Inventore,Entrada,True,22
+107,Velit,Entrada,True,3
+108,Reprehenderit,Entrada,False,49
+109,Unde,Entrada,True,75
+110,Sapiente,Entrada,True,59
+111,Sed,Plato Fuerte,True,16
+112,Blanditiis,Entrada,False,126
+113,Totam,Postre,False,42
+114,Error,Entrada,True,18
+115,Praesentium,Plato Fuerte,False,19
+116,Voluptatibus,Entrada,True,79
+117,Unde,Plato Fuerte,True,186
+118,Dicta,Plato Fuerte,True,146
+119,Iusto,Entrada,True,183
+120,Aspernatur,Postre,False,183
+121,Ipsam,Entrada,False,76
+122,Ad,Entrada,False,83
+123,Minus,Postre,False,12
+124,Dignissimos,Entrada,False,148
+125,Nam,Entrada,True,182
+126,Consequatur,Postre,False,97
+127,Culpa,Plato Fuerte,True,153
+128,Sunt,Postre,False,39
+129,Mollitia,Entrada,False,175
+130,Dolorem,Entrada,True,4
+131,Ex,Plato Fuerte,True,127
+132,Asperiores,Postre,True,199
+133,Reprehenderit,Plato Fuerte,False,98
+134,Illum,Postre,True,18
+135,Eos,Entrada,True,180
+136,Accusantium,Postre,True,165
+137,In,Postre,True,56
+138,Explicabo,Postre,False,73
+139,Dignissimos,Plato Fuerte,False,4
+140,Tempora,Postre,True,123
+141,Facilis,Entrada,False,80
+142,Dolorem,Entrada,True,76
+143,Ea,Entrada,False,108
+144,Perspiciatis,Postre,False,193
+145,Earum,Postre,False,22
+146,Neque,Entrada,False,180
+147,Similique,Entrada,True,149
+148,Eos,Entrada,True,57
+149,Fugit,Entrada,True,73
+150,Optio,Entrada,True,11
+151,Amet,Postre,False,33
+152,Ratione,Postre,True,93
+153,Quasi,Postre,True,78
+154,Assumenda,Plato Fuerte,True,109
+155,Pariatur,Entrada,True,159
+156,Corporis,Entrada,True,177
+157,Nisi,Postre,True,43
+158,Cumque,Plato Fuerte,True,141
+159,Nisi,Plato Fuerte,True,111
+160,Error,Postre,False,83
+161,Hic,Entrada,False,85
+162,Neque,Entrada,False,146
+163,Omnis,Plato Fuerte,True,82
+164,Corporis,Entrada,False,104
+165,Quis,Postre,False,105
+166,Provident,Plato Fuerte,False,167
+167,Consequuntur,Postre,False,6
+168,Corrupti,Postre,True,101
+169,Facere,Entrada,True,95
+170,Dicta,Plato Fuerte,False,75
+171,Officia,Entrada,False,66
+172,Sapiente,Postre,True,99
+173,Quos,Plato Fuerte,False,59
+174,Beatae,Entrada,True,73
+175,Fugiat,Entrada,True,106
+176,Debitis,Plato Fuerte,False,195
+177,Hic,Postre,False,47
+178,Non,Plato Fuerte,False,27
+179,Sed,Entrada,True,197
+180,Natus,Postre,True,82
+181,Magnam,Postre,False,76
+182,Quos,Postre,False,34
+183,Dolorem,Plato Fuerte,False,179
+184,Harum,Plato Fuerte,True,144
+185,Excepturi,Entrada,True,110
+186,Voluptatem,Entrada,False,107
+187,Rem,Entrada,True,124
+188,Magnam,Postre,True,51
+189,Labore,Plato Fuerte,False,70
+190,Qui,Plato Fuerte,True,100
+191,Ea,Plato Fuerte,True,63
+192,Consequatur,Entrada,False,102
+193,Illum,Entrada,True,15
+194,Maxime,Entrada,True,88
+195,Perferendis,Entrada,True,183
+196,Excepturi,Entrada,True,67
+197,Nostrum,Plato Fuerte,True,4
+198,Distinctio,Postre,False,11
+199,A,Entrada,True,86
+200,Amet,Postre,True,2
+201,Explicabo,Entrada,True,156
+202,Nobis,Entrada,True,81
+203,Doloremque,Postre,True,19
+204,Fugit,Postre,True,99
+205,Rem,Postre,False,45
+206,Ad,Plato Fuerte,False,107
+207,Unde,Postre,True,95
+208,Aliquid,Postre,False,190
+209,Nemo,Plato Fuerte,False,4
+210,In,Entrada,True,56
+211,Quis,Entrada,False,176
+212,Occaecati,Postre,False,190
+213,Aliquam,Entrada,True,180
+214,Modi,Entrada,False,1
+215,Tempore,Entrada,True,74
+216,Voluptatem,Postre,False,170
+217,Vel,Entrada,False,86
+218,Laborum,Plato Fuerte,True,52
+219,Officia,Plato Fuerte,True,145
+220,Tempore,Entrada,True,139
+221,Ab,Plato Fuerte,True,9
+222,Soluta,Postre,True,115
+223,Repellendus,Postre,True,3
+224,Veniam,Plato Fuerte,False,11
+225,Aspernatur,Entrada,False,177
+226,Reiciendis,Entrada,True,125
+227,Veritatis,Plato Fuerte,True,10
+228,Maxime,Plato Fuerte,False,189
+229,Veniam,Plato Fuerte,False,102
+230,Sunt,Entrada,True,191
+231,Maxime,Entrada,False,94
+232,Inventore,Plato Fuerte,True,91
+233,Impedit,Plato Fuerte,True,182
+234,Distinctio,Plato Fuerte,False,160
+235,Eum,Postre,True,19
+236,Ipsam,Plato Fuerte,True,138
+237,Sint,Plato Fuerte,True,70
+238,Natus,Entrada,True,8
+239,Omnis,Plato Fuerte,False,47
+240,Et,Postre,True,56
+241,Ipsum,Postre,True,153
+242,Quibusdam,Entrada,True,6
+243,Pariatur,Plato Fuerte,False,60
+244,Nostrum,Postre,False,110
+245,Aspernatur,Postre,True,94
+246,Itaque,Plato Fuerte,False,84
+247,Nam,Postre,False,90
+248,Culpa,Entrada,True,105
+249,Nisi,Plato Fuerte,False,181
+250,Expedita,Postre,True,52
+251,Aspernatur,Entrada,False,164
+252,Minus,Entrada,True,162
+253,Molestias,Entrada,False,85
+254,Ab,Postre,False,197
+255,Fugit,Plato Fuerte,False,28
+256,Sit,Postre,False,45
+257,Aperiam,Postre,True,49
+258,Esse,Plato Fuerte,True,72
+259,Ad,Plato Fuerte,False,21
+260,Adipisci,Plato Fuerte,False,23
+261,Facilis,Entrada,False,171
+262,Facere,Postre,False,70
+263,Occaecati,Postre,True,139
+264,Autem,Plato Fuerte,False,114
+265,Ipsum,Postre,True,63
+266,Impedit,Entrada,False,44
+267,Nisi,Entrada,True,58
+268,Placeat,Plato Fuerte,True,96
+269,Reiciendis,Postre,False,95
+270,Molestiae,Entrada,False,55
+271,Vero,Postre,True,181
+272,Suscipit,Postre,False,44
+273,Accusamus,Entrada,False,109
+274,Placeat,Postre,False,174
+275,Eum,Plato Fuerte,False,64
+276,Aliquid,Entrada,True,105
+277,Tempora,Postre,False,63
+278,Enim,Entrada,True,139
+279,Ea,Entrada,True,134
+280,Ipsam,Postre,True,19
+281,Culpa,Plato Fuerte,False,35
+282,Tempore,Entrada,True,188
+283,Quis,Postre,True,108
+284,Consectetur,Plato Fuerte,False,43
+285,Explicabo,Entrada,True,42
+286,Blanditiis,Plato Fuerte,False,73
+287,Voluptatem,Entrada,True,186
+288,Aspernatur,Entrada,True,119
+289,Sapiente,Entrada,False,58
+290,Aut,Plato Fuerte,False,25
+291,Ipsa,Plato Fuerte,True,127
+292,Assumenda,Plato Fuerte,True,188
+293,Dolor,Entrada,False,67
+294,Unde,Plato Fuerte,False,156
+295,Quod,Entrada,True,93
+296,Repellat,Postre,True,14
+297,Atque,Plato Fuerte,True,18
+298,Dolorum,Entrada,True,96
+299,Animi,Postre,False,87
+300,Reiciendis,Postre,True,175
+301,Exercitationem,Entrada,False,38
+302,Ullam,Postre,False,114
+303,Vel,Plato Fuerte,False,85
+304,Repudiandae,Entrada,False,184
+305,Recusandae,Entrada,False,2
+306,Molestias,Entrada,False,96
+307,Perferendis,Plato Fuerte,True,34
+308,Saepe,Plato Fuerte,True,188
+309,Ullam,Plato Fuerte,False,133
+310,Reprehenderit,Postre,False,156
+311,Aperiam,Postre,False,142
+312,Voluptas,Entrada,False,157
+313,Laborum,Plato Fuerte,True,98
+314,Eum,Postre,False,149
+315,Ullam,Plato Fuerte,True,178
+316,Culpa,Postre,True,79
+317,Officia,Plato Fuerte,False,11
+318,Maxime,Postre,True,32
+319,Possimus,Plato Fuerte,False,98
+320,Ullam,Entrada,True,22
+321,Neque,Entrada,False,119
+322,Molestias,Plato Fuerte,False,129
+323,Eaque,Postre,True,54
+324,Magni,Plato Fuerte,True,118
+325,Ipsa,Plato Fuerte,True,164
+326,Sapiente,Entrada,False,27
+327,Vel,Entrada,False,113
+328,Exercitationem,Postre,False,32
+329,Reiciendis,Postre,True,13
+330,Modi,Entrada,False,152
+331,Error,Entrada,True,74
+332,Quia,Entrada,False,126
+333,Alias,Postre,False,146
+334,Iure,Plato Fuerte,False,50
+335,Tenetur,Plato Fuerte,True,60
+336,Expedita,Plato Fuerte,False,166
+337,Aliquid,Postre,True,31
+338,Eum,Plato Fuerte,True,156
+339,Libero,Entrada,True,112
+340,Laudantium,Entrada,True,55
+341,Nam,Plato Fuerte,False,83
+342,Nihil,Plato Fuerte,True,164
+343,Temporibus,Plato Fuerte,False,165
+344,Esse,Postre,False,5
+345,Voluptatibus,Entrada,True,78
+346,Mollitia,Plato Fuerte,True,162
+347,Alias,Entrada,False,123
+348,Sint,Postre,False,166
+349,Tenetur,Plato Fuerte,True,45
+350,Sint,Plato Fuerte,False,42
+351,Totam,Entrada,False,15
+352,Et,Entrada,False,53
+353,Facere,Entrada,False,44
+354,Quam,Plato Fuerte,False,28
+355,Corporis,Postre,True,144
+356,Sint,Postre,True,114
+357,Maxime,Plato Fuerte,True,70
+358,Quo,Entrada,False,81
+359,Vitae,Plato Fuerte,False,28
+360,Odit,Postre,False,115
+361,Tempore,Entrada,True,94
+362,Nihil,Plato Fuerte,False,176
+363,Cupiditate,Postre,False,191
+364,Debitis,Postre,False,26
+365,Et,Plato Fuerte,False,161
+366,Fuga,Postre,False,118
+367,Occaecati,Plato Fuerte,True,36
+368,Error,Postre,True,171
+369,Nesciunt,Entrada,True,21
+370,Alias,Entrada,False,150
+371,Fuga,Plato Fuerte,False,136
+372,Eaque,Plato Fuerte,True,32
+373,Dolores,Entrada,True,151
+374,Itaque,Entrada,True,6
+375,Ea,Postre,True,193
+376,Rem,Plato Fuerte,False,61
+377,Aspernatur,Entrada,True,122
+378,Mollitia,Postre,True,119
+379,Consectetur,Plato Fuerte,False,175
+380,Tempora,Plato Fuerte,True,64
+381,Eveniet,Plato Fuerte,True,77
+382,Consectetur,Plato Fuerte,True,27
+383,Voluptas,Plato Fuerte,False,123
+384,Reprehenderit,Plato Fuerte,True,39
+385,Iure,Plato Fuerte,False,129
+386,Nulla,Postre,True,193
+387,Voluptate,Entrada,True,199
+388,Assumenda,Postre,False,56
+389,Esse,Plato Fuerte,True,19
+390,Sit,Entrada,True,43
+391,Assumenda,Postre,False,96
+392,Doloremque,Plato Fuerte,True,37
+393,Exercitationem,Entrada,False,151
+394,Iusto,Entrada,True,41
+395,Repudiandae,Plato Fuerte,False,33
+396,Ab,Entrada,False,95
+397,Nihil,Postre,True,135
+398,Consequuntur,Entrada,True,63
+399,Illo,Postre,False,17
+400,Maiores,Entrada,False,161
+401,Voluptates,Plato Fuerte,True,52
+402,Dolorum,Plato Fuerte,True,108
+403,Voluptate,Plato Fuerte,False,64
+404,Enim,Plato Fuerte,True,30
+405,Ad,Postre,True,31
+406,Hic,Plato Fuerte,False,194
+407,Repudiandae,Plato Fuerte,False,104
+408,Consequuntur,Plato Fuerte,True,195
+409,Facere,Plato Fuerte,True,75
+410,Facilis,Entrada,False,192
+411,Architecto,Plato Fuerte,True,7
+412,Placeat,Postre,True,136
+413,Quisquam,Plato Fuerte,False,109
+414,Non,Postre,False,19
+415,Maxime,Postre,True,82
+416,Voluptas,Postre,False,79
+417,Unde,Postre,True,170
+418,Nostrum,Plato Fuerte,True,181
+419,Adipisci,Entrada,True,149
+420,Exercitationem,Entrada,False,98
+421,Odio,Entrada,False,51
+422,Assumenda,Plato Fuerte,True,55
+423,Pariatur,Postre,False,168
+424,Fuga,Plato Fuerte,True,195
+425,Numquam,Postre,True,127
+426,Enim,Entrada,True,64
+427,Fugit,Entrada,False,119
+428,Asperiores,Postre,True,194
+429,Laboriosam,Entrada,True,42
+430,Beatae,Postre,True,110
+431,Quos,Postre,False,8
+432,Nobis,Postre,True,56
+433,Aspernatur,Entrada,True,50
+434,Quisquam,Plato Fuerte,False,16
+435,Cupiditate,Plato Fuerte,True,42
+436,Quaerat,Entrada,False,1
+437,Neque,Postre,False,58
+438,Debitis,Plato Fuerte,False,166
+439,Cum,Plato Fuerte,False,188
+440,Itaque,Entrada,True,185
+441,Ea,Postre,True,6
+442,Neque,Plato Fuerte,False,195
+443,Odio,Plato Fuerte,False,9
+444,Numquam,Entrada,False,68
+445,Ullam,Entrada,True,50
+446,Tempore,Plato Fuerte,True,187
+447,Eos,Plato Fuerte,True,162
+448,Impedit,Plato Fuerte,False,198
+449,Quos,Plato Fuerte,False,106
+450,Ex,Plato Fuerte,True,1
+451,Facere,Plato Fuerte,False,61
+452,Culpa,Entrada,True,175
+453,Voluptatibus,Postre,False,31
+454,Ipsa,Postre,True,158
+455,Libero,Postre,False,51
+456,Asperiores,Postre,True,7
+457,Libero,Plato Fuerte,False,49
+458,Commodi,Postre,True,59
+459,Quisquam,Postre,False,76
+460,Omnis,Entrada,True,79
+461,Alias,Postre,True,137
+462,Est,Entrada,True,20
+463,Nobis,Plato Fuerte,False,148
+464,Nulla,Entrada,False,15
+465,Commodi,Entrada,False,187
+466,Quas,Entrada,True,164
+467,Necessitatibus,Postre,False,157
+468,Odit,Plato Fuerte,True,32
+469,Accusantium,Plato Fuerte,False,2
+470,Adipisci,Postre,True,189
+471,Harum,Postre,True,107
+472,Debitis,Postre,True,19
+473,Quaerat,Postre,False,157
+474,Veritatis,Entrada,False,177
+475,Aspernatur,Postre,True,130
+476,Dolores,Plato Fuerte,False,185
+477,Placeat,Postre,False,84
+478,Cum,Plato Fuerte,False,173
+479,Magni,Plato Fuerte,True,80
+480,Provident,Entrada,False,162
+481,Facilis,Plato Fuerte,True,139
+482,Vel,Plato Fuerte,False,78
+483,Veniam,Entrada,False,168
+484,Veniam,Plato Fuerte,True,160
+485,Recusandae,Postre,True,55
+486,Pariatur,Plato Fuerte,True,90
+487,Voluptas,Entrada,False,62
+488,Harum,Plato Fuerte,False,94
+489,Ipsa,Plato Fuerte,True,137
+490,Hic,Postre,True,28
+491,Ducimus,Entrada,False,95
+492,Quo,Postre,True,140
+493,Consectetur,Plato Fuerte,True,148
+494,Rerum,Postre,False,198
+495,Sequi,Entrada,False,25
+496,Incidunt,Entrada,True,137
+497,Sit,Plato Fuerte,False,182
+498,Vitae,Entrada,False,143
+499,Quia,Postre,True,130
+500,Impedit,Postre,True,80
+501,Provident,Entrada,True,52
+502,Dolore,Postre,False,102
+503,Minus,Plato Fuerte,True,46
+504,Eveniet,Entrada,False,52
+505,Veniam,Entrada,False,35
+506,Quas,Entrada,False,56
+507,Porro,Entrada,False,52
+508,Nam,Plato Fuerte,False,195
+509,Architecto,Postre,True,155
+510,Exercitationem,Entrada,False,83
+511,Ullam,Plato Fuerte,True,172
+512,Placeat,Entrada,False,151
+513,Itaque,Entrada,True,76
+514,Esse,Entrada,False,188
+515,Labore,Entrada,True,145
+516,Consectetur,Plato Fuerte,False,17
+517,Eum,Plato Fuerte,False,199
+518,Impedit,Postre,False,132
+519,Consectetur,Postre,False,178
+520,Ipsum,Postre,False,168
+521,Recusandae,Postre,False,41
+522,Laudantium,Plato Fuerte,True,94
+523,Esse,Plato Fuerte,False,5
+524,Distinctio,Postre,False,41
+525,Quaerat,Entrada,False,92
+526,Labore,Postre,False,176
+527,Magnam,Plato Fuerte,True,184
+528,Libero,Postre,False,197
+529,Eligendi,Entrada,False,83
+530,Accusamus,Postre,True,77
+531,Illum,Postre,True,180
+532,Eum,Entrada,False,4
+533,Dolore,Entrada,False,90
+534,Optio,Postre,True,52
+535,Expedita,Plato Fuerte,False,93
+536,Dignissimos,Entrada,False,68
+537,Qui,Postre,False,191
+538,Sequi,Entrada,False,154
+539,Minus,Plato Fuerte,False,77
+540,Aspernatur,Entrada,False,177
+541,Ex,Entrada,False,47
+542,Iure,Plato Fuerte,False,155
+543,Quidem,Entrada,True,184
+544,Numquam,Postre,False,62
+545,Officiis,Postre,False,59
+546,Deserunt,Postre,True,110
+547,Suscipit,Plato Fuerte,False,176
+548,Tempora,Entrada,True,85
+549,Enim,Plato Fuerte,True,12
+550,Minus,Postre,True,82
+551,Ex,Entrada,True,90
+552,Error,Entrada,True,105
+553,Cumque,Entrada,True,94
+554,Quidem,Plato Fuerte,True,14
+555,Autem,Plato Fuerte,False,4
+556,Modi,Plato Fuerte,True,126
+557,Autem,Entrada,True,85
+558,Laboriosam,Plato Fuerte,False,181
+559,Delectus,Postre,True,65
+560,Minus,Postre,True,50
+561,Vitae,Postre,True,41
+562,Quasi,Plato Fuerte,False,142
+563,Ad,Plato Fuerte,False,6
+564,Cumque,Postre,True,12
+565,Saepe,Plato Fuerte,False,99
+566,Expedita,Postre,False,186
+567,Autem,Entrada,False,165
+568,Veniam,Postre,False,138
+569,Cum,Plato Fuerte,True,164
+570,Iusto,Postre,True,72
+571,Iure,Plato Fuerte,False,112
+572,Inventore,Plato Fuerte,False,75
+573,Earum,Postre,True,79
+574,Ex,Plato Fuerte,True,180
+575,Possimus,Plato Fuerte,True,1
+576,Repudiandae,Entrada,False,44
+577,Id,Postre,True,165
+578,Cum,Entrada,True,83
+579,Fuga,Entrada,False,151
+580,Nulla,Postre,False,65
+581,Nisi,Plato Fuerte,True,32
+582,Earum,Plato Fuerte,False,75
+583,Esse,Entrada,True,160
+584,Excepturi,Entrada,False,136
+585,Et,Plato Fuerte,True,54
+586,Eos,Postre,True,153
+587,Quo,Entrada,False,66
+588,Veritatis,Plato Fuerte,False,20
+589,Ducimus,Plato Fuerte,False,9
+590,Dolorem,Plato Fuerte,True,178
+591,Dignissimos,Plato Fuerte,True,193
+592,Repudiandae,Plato Fuerte,False,141
+593,Sed,Plato Fuerte,True,172
+594,Maxime,Postre,True,88
+595,Aut,Plato Fuerte,True,97
+596,Qui,Entrada,True,112
+597,Repudiandae,Plato Fuerte,False,60
+598,Ducimus,Plato Fuerte,False,167
+599,Architecto,Postre,False,140
+600,Occaecati,Plato Fuerte,False,49
+601,Dolorum,Entrada,False,76
+602,Reprehenderit,Postre,True,34
+603,Asperiores,Entrada,False,162
+604,Ducimus,Postre,True,105
+605,Ipsa,Postre,True,88
+606,Nostrum,Entrada,True,108
+607,Perspiciatis,Postre,False,9
+608,Unde,Entrada,False,171
+609,Deserunt,Plato Fuerte,True,174
+610,Sunt,Plato Fuerte,False,122
+611,Id,Entrada,True,83
+612,Numquam,Entrada,False,133
+613,Molestiae,Entrada,False,25
+614,Unde,Postre,False,77
+615,Fugiat,Entrada,True,41
+616,Autem,Postre,False,85
+617,Officiis,Plato Fuerte,True,186
+618,Velit,Entrada,True,90
+619,Quidem,Entrada,True,105
+620,Veniam,Plato Fuerte,True,35
+621,Iste,Entrada,True,63
+622,Laborum,Plato Fuerte,False,174
+623,Eius,Plato Fuerte,True,178
+624,Temporibus,Plato Fuerte,True,84
+625,Itaque,Postre,False,150
+626,Dolore,Postre,False,144
+627,Atque,Entrada,True,167
+628,Praesentium,Entrada,True,102
+629,Voluptatum,Postre,True,118
+630,Placeat,Postre,True,40
+631,Ullam,Plato Fuerte,True,143
+632,Reprehenderit,Postre,True,199
+633,Quo,Postre,False,198
+634,Sapiente,Plato Fuerte,False,67
+635,Accusamus,Plato Fuerte,False,166
+636,Modi,Entrada,True,142
+637,Voluptatem,Entrada,False,78
+638,Non,Entrada,False,28
+639,Atque,Entrada,True,190
+640,Similique,Entrada,False,182
+641,Dolorem,Plato Fuerte,True,181
+642,Officia,Plato Fuerte,False,172
+643,Iure,Plato Fuerte,True,90
+644,Laboriosam,Postre,True,24
+645,Placeat,Postre,False,5
+646,Sed,Postre,True,83
+647,Iste,Postre,True,96
+648,Quaerat,Entrada,True,59
+649,Cumque,Entrada,True,156
+650,Fugiat,Plato Fuerte,False,68
+651,In,Postre,True,89
+652,Repellat,Plato Fuerte,False,103
+653,Recusandae,Postre,False,127
+654,Quis,Plato Fuerte,False,97
+655,Natus,Entrada,True,63
+656,Sequi,Entrada,True,70
+657,Hic,Postre,True,45
+658,Eligendi,Plato Fuerte,True,86
+659,Voluptates,Plato Fuerte,True,106
+660,Eius,Postre,False,97
+661,Suscipit,Plato Fuerte,True,160
+662,Autem,Plato Fuerte,False,146
+663,Architecto,Plato Fuerte,True,160
+664,Impedit,Entrada,True,137
+665,Laborum,Entrada,True,76
+666,Amet,Entrada,False,60
+667,Nemo,Entrada,True,85
+668,Facilis,Plato Fuerte,True,26
+669,Totam,Plato Fuerte,False,143
+670,Velit,Postre,False,48
+671,Animi,Plato Fuerte,True,11
+672,Quisquam,Entrada,True,148
+673,Quis,Plato Fuerte,False,75
+674,Quidem,Postre,False,119
+675,Illo,Postre,True,177
+676,Aspernatur,Postre,True,87
+677,Iste,Postre,False,140
+678,Repellat,Postre,True,105
+679,Deleniti,Postre,True,25
+680,Maxime,Plato Fuerte,False,4
+681,Maiores,Postre,False,71
+682,Maxime,Plato Fuerte,False,31
+683,Optio,Plato Fuerte,False,16
+684,Laboriosam,Postre,False,109
+685,Hic,Plato Fuerte,True,2
+686,Ipsa,Plato Fuerte,True,174
+687,Repellat,Postre,True,112
+688,Non,Entrada,False,42
+689,Consequuntur,Plato Fuerte,False,57
+690,Tempora,Postre,False,94
+691,Doloremque,Plato Fuerte,True,190
+692,Assumenda,Postre,True,139
+693,Expedita,Entrada,True,135
+694,Eligendi,Postre,False,110
+695,Amet,Postre,False,118
+696,Quidem,Entrada,True,82
+697,Recusandae,Plato Fuerte,True,196
+698,Minus,Plato Fuerte,False,143
+699,Amet,Entrada,False,29
+700,Nulla,Entrada,True,160
+701,Autem,Plato Fuerte,False,23
+702,Sapiente,Entrada,True,89
+703,Pariatur,Plato Fuerte,False,34
+704,Sapiente,Entrada,True,107
+705,Occaecati,Entrada,False,39
+706,Nemo,Entrada,False,158
+707,Recusandae,Plato Fuerte,False,191
+708,Rerum,Entrada,False,180
+709,Magnam,Plato Fuerte,True,171
+710,Amet,Postre,False,163
+711,Iusto,Postre,False,120
+712,Beatae,Plato Fuerte,False,2
+713,Ut,Entrada,False,56
+714,Sint,Entrada,True,161
+715,Corporis,Plato Fuerte,False,164
+716,Itaque,Entrada,False,92
+717,Dolores,Entrada,True,17
+718,Hic,Plato Fuerte,False,107
+719,Pariatur,Plato Fuerte,True,86
+720,Autem,Postre,True,68
+721,Sit,Entrada,False,144
+722,Voluptatem,Entrada,False,33
+723,Reiciendis,Plato Fuerte,False,129
+724,Voluptates,Plato Fuerte,False,135
+725,Eveniet,Entrada,False,9
+726,Accusamus,Postre,False,124
+727,Molestiae,Entrada,False,88
+728,Itaque,Plato Fuerte,True,45
+729,Voluptatum,Plato Fuerte,False,171
+730,Odit,Postre,False,45
+731,Quos,Postre,False,18
+732,Nobis,Entrada,False,70
+733,Assumenda,Plato Fuerte,True,22
+734,Corporis,Plato Fuerte,True,128
+735,Quidem,Entrada,True,181
+736,Adipisci,Plato Fuerte,True,106
+737,Possimus,Plato Fuerte,False,194
+738,Hic,Postre,True,70
+739,Ipsa,Plato Fuerte,False,6
+740,Dolores,Plato Fuerte,True,10
+741,Labore,Entrada,False,39
+742,Corrupti,Postre,True,63
+743,Recusandae,Entrada,True,190
+744,Dolores,Postre,True,5
+745,Repellat,Postre,False,175
+746,Ratione,Plato Fuerte,False,193
+747,Ex,Entrada,False,179
+748,Magnam,Plato Fuerte,False,81
+749,Fugit,Postre,False,39
+750,Quisquam,Postre,True,62
+751,Quo,Plato Fuerte,True,190
+752,Quasi,Entrada,False,9
+753,Facilis,Plato Fuerte,True,102
+754,Rem,Postre,False,14
+755,Ad,Entrada,True,128
+756,Similique,Plato Fuerte,False,34
+757,Incidunt,Entrada,False,104
+758,Quo,Postre,True,128
+759,Dignissimos,Postre,True,23
+760,Dolores,Plato Fuerte,False,166
+761,Velit,Plato Fuerte,False,163
+762,Odit,Entrada,False,11
+763,At,Postre,True,68
+764,Blanditiis,Postre,True,162
+765,Molestias,Postre,False,23
+766,Mollitia,Entrada,True,193
+767,Nemo,Plato Fuerte,True,12
+768,Accusantium,Plato Fuerte,True,122
+769,Iusto,Plato Fuerte,False,99
+770,Quam,Postre,True,197
+771,Et,Plato Fuerte,True,98
+772,Consequuntur,Plato Fuerte,True,140
+773,Animi,Plato Fuerte,True,197
+774,Assumenda,Entrada,False,199
+775,Eius,Postre,True,104
+776,Voluptatem,Postre,True,21
+777,Culpa,Entrada,True,170
+778,Minima,Postre,False,85
+779,Necessitatibus,Plato Fuerte,False,144
+780,Illo,Plato Fuerte,False,79
+781,Accusamus,Plato Fuerte,False,90
+782,Quaerat,Plato Fuerte,True,82
+783,Deleniti,Plato Fuerte,False,86
+784,Nemo,Entrada,True,109
+785,Eos,Entrada,True,163
+786,Sed,Entrada,False,112
+787,Laborum,Plato Fuerte,True,32
+788,Veniam,Entrada,False,163
+789,Quas,Plato Fuerte,False,28
+790,Maiores,Entrada,False,131
+791,Delectus,Plato Fuerte,True,188
+792,Aspernatur,Entrada,True,115
+793,Quam,Plato Fuerte,True,77
+794,Blanditiis,Postre,False,27
+795,Quod,Entrada,False,51
+796,Odit,Entrada,True,97
+797,Commodi,Plato Fuerte,True,40
+798,Occaecati,Plato Fuerte,False,126
+799,Neque,Plato Fuerte,False,11
+800,Sit,Entrada,False,106

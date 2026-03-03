@@ -1,0 +1,124 @@
+# -----------------------------------------------------------
+# StatefulSet: PostgreSQL 15
+# Base de datos relacional principal del sistema OLTP.
+# Se utiliza StatefulSet para garantizar identidad de red
+# estable y almacenamiento persistente entre reinicios.
+# -----------------------------------------------------------
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres-db
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: postgres-db
+    app.kubernetes.io/component: base-de-datos
+    app.kubernetes.io/part-of: restaurantes-oltp
+    app.kubernetes.io/version: "15"
+spec:
+  serviceName: postgres-db
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: postgres-db
+      app.kubernetes.io/component: base-de-datos
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: postgres-db
+        app.kubernetes.io/component: base-de-datos
+        app.kubernetes.io/part-of: restaurantes-oltp
+    spec:
+      # Contexto de seguridad a nivel de pod
+      securityContext:
+        fsGroup: 999
+      containers:
+        - name: postgres
+          image: postgres:15
+          ports:
+            - containerPort: 5432
+              name: postgres
+              protocol: TCP
+          # Variables de entorno para inicializacion de PostgreSQL
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: restaurantes-config
+                  key: DB_NAME
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: restaurantes-secrets
+                  key: DB_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: restaurantes-secrets
+                  key: DB_PASS
+            # Directorio de datos dentro del volumen persistente
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          # Limites y solicitudes de recursos
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+          # Sonda de disponibilidad: verifica que PostgreSQL acepte conexiones
+          readinessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - $(POSTGRES_USER)
+                - -d
+                - $(POSTGRES_DB)
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          # Sonda de vida: reinicia el contenedor si PostgreSQL deja de responder
+          livenessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - $(POSTGRES_USER)
+                - -d
+                - $(POSTGRES_DB)
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 5
+          # Sonda de inicio: tiempo extra para la primera inicializacion
+          startupProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - $(POSTGRES_USER)
+                - -d
+                - $(POSTGRES_DB)
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 30
+          # Montaje del volumen persistente
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+  # Plantilla de volumen persistente
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-data
+        labels:
+          app.kubernetes.io/name: postgres-db
+          app.kubernetes.io/component: base-de-datos
+          app.kubernetes.io/part-of: restaurantes-oltp
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi

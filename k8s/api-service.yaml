@@ -1,0 +1,25 @@
+# -----------------------------------------------------------
+# Service: API Principal (ClusterIP)
+# Expone la API REST internamente dentro del cluster.
+# El Ingress Controller enruta el trafico externo hacia
+# este servicio.
+# -----------------------------------------------------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurantes-api
+  namespace: restaurantes-oltp
+  labels:
+    app.kubernetes.io/name: restaurantes-api
+    app.kubernetes.io/component: api
+    app.kubernetes.io/part-of: restaurantes-oltp
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: restaurantes-api
+    app.kubernetes.io/component: api
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+      protocol: TCP
